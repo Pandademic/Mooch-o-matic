@@ -1,5 +1,7 @@
+var NoseX;
+var NoseY;
 function preload() {
-    
+    mooch=loadImage('https://i.postimg.cc/k5ffvt9r/m.png')    
 }
 function setup() {
     canvas=createCanvas(300,300);
@@ -12,6 +14,7 @@ function setup() {
 }
 function draw() {
     image(video,0,0,300,300);
+    image(mooch,NoseX-10,NoseY-10,30,30)
     
 }
 function modelLoaded(){
@@ -20,10 +23,10 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length>0){
         console.log(results);
-        noseX=results[0].pose.nose.x-10;
-        noseY=results[0].pose.nose.y-10;
-        console.log("nose x ="+noseX);
-        console.log("nose y="+noseY);
+        NoseX=results[0].pose.nose.x-10;
+        NoseY=results[0].pose.nose.y-10;
+        console.log("nose x ="+NoseX);
+        console.log("nose y="+NoseY);
 
 
     }
